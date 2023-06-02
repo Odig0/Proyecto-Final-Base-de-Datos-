@@ -1,0 +1,33 @@
+﻿@page
+@model BaseDeDatosProyecto.Pages.MarcasComputadoras.IndexModel1
+@{
+}
+
+<br />
+<h2>Marcas de Computadora</h2>
+
+
+
+<a class="btn btn-primary btn-sm" href='/Clientes/Create'> Crear Nuevo Venta</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Pais Origen</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listClientes)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.nombre</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href='/Clientes/Edit?id=@item.id'>Editar</a>
+                    <a class="btn btn-primary btn-sm" href='/Clientes/Delete?id=@item.id'>Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
